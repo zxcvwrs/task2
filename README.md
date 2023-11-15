@@ -85,7 +85,7 @@ W wyniku tych operacji na stacji roboczej zostanie uruchomiony kontener dockerow
 1. **Uruchomienie aplikacji gitleaks**
     Będąc w katalogu główym (Task2) należy uruchomić aplikacje gitleaks via docker:
     ```shell
-    docker run -v ${path_to_host_folder_to_scan}:/path zricethezav/gitleaks:latest detect --source="/path" 
+    docker run -v ${path_to_host_folder_to_scan}:/path zricethezav/gitleaks:latest detect --source="/path" -v 
     ```
    gdzie: `path_to_host_folder_to_scan` to ścieżka do pobranego na stację roboczą folderu z repozytorium `Task2`
 2. **Weryfikacja działania i wyników**
