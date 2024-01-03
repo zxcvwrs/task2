@@ -69,12 +69,6 @@ W wyniku tych operacji na stacji roboczej zostanie uruchomiony kontener dockerow
    W przypadku identyfikacji ciągu znaków w logach aplikacji należy zaproponować zmianę, która spowoduje usunięcie zagrożenia, jakim jest wyciek wrażliwych danych.
 
    **O ile to jest możliwe nie ingerujemy w format logów, tylko powodujemy, że zidentyfikowane wrażliwe dane (pesel, adres) będą zamaskowane w logach aplikacji, zamaskowane czyli zamiast wartości `123456890` pojawi się wartość `*********`**
-4.  **Przesłanie wyników
-    Wynikiem ćwiczenia ma być przygotowany `Pull Request` z zaimplementowaną poprawką. Informacje jak przygotować `Pull Request` znajdują się [tutaj](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request).
-
-    Co musi zawierać `Pull Request`:
-    - W opisie musi znaleźć się informacja o znalezionej podatności - co to za podatność, gdzie została znaleziona, sposób jej odtworzenia oraz screen udowadniający jej wystąpienie.
-    - Commit (zmianę w kodzie), która zawiera wprowadzoną zmianę.
 
 ## Zadanie 2 - weryfikacja wycieku sekretów
 
@@ -90,11 +84,7 @@ W wyniku tych operacji na stacji roboczej zostanie uruchomiony kontener dockerow
    gdzie: `path_to_host_folder_to_scan` to ścieżka do pobranego na stację roboczą folderu z repozytorium `Task2`
 2. **Weryfikacja działania i wyników**
     Zweryfikowanie wyników, które zostały wykryte przez aplikacje gitleaks. Weryfikacja polega na zweryfikowaniu czy gitleaks nie zasygnalizował wykrycia fałszywie pozytywnego, wykryciem fałszywie pozytywnym jest np wystąpienie w kodzie aplikacji słowa `password`, które jest zmienną, a nie przyjmuje narzuconej z góry wartości.
-3. **Przesłanie wyników**
-    Uzupełnienie informacji w `Pull Request'cie` z zadania 1, które zawierają:
-   - info o tym jak uruchomiono weryfikacje sekretów
-   - info o tym, co zostało wykryte
-   - propozycje poprawienia problemu (nie robimy zmiany w kodzie, tylko jednym, dwoma zdaniami piszemy jak należy zarządzać hasłami i sekretami w kodzie źródłowym)
+
 
 ## Zadanie 3 - weryfikacja bezpieczeństwa bibliotek OpenSource wykorzystywanych w projekcie 
 
@@ -129,25 +119,7 @@ W przypadku Aplikacji napisanej w JAVA wykorzystywany będzie OWASP Dependency C
     - Opis podatności (czasem krótki, z linkiem zawierającym więcej informacji)
 
     Należy wybrać jedną wykrytą podatność/pakiet, który zawiera podatność (o najwyższej krytyczności), a następnie wykonać analize możliwości jego wykorzystania. Analiza to nie studium użycia - nie ma potrzeby aby próbować wykorzystać podatność, która została wykryta w danej bibliotece. Chodzi o przeczytanie i zweryfikowanie co powoduje wystąpienie podatności w danym pakiecie typu `W pakiecie X wykryto podatność typu RCE oznaczoną jako Krytyczna. Wykorzystanie podatności jest możliwe po uruchomieniu metody Y z klasy Z. Po analizie w badanej aplikacji klasa Z nie jest wykorzystywana także prawdopodobieństwo wykorzystania tej podatności jest minimalne`
-3. **Przesłanie wyników**
-    Uzupełnienie PRa o informacje:
-    - Screen z wykonanego skanu (np. wynik komendy)
-    - Lista wykrytych podatności w tym podaności o Krytyczności Critical
-    - Opis i analiza dla jednej wybranej podatności o jak najwyższej krytyczności
-    - Ocena tego, czy przeanalizowana podatnosc musi być usunięta i jeśli tak propozycja wersji pakietu, która nie zawiera podatności
 
-# Podesłanie wyników
-* Wyniki powinny być podesłane w formie `Pull Requesta` w sforkowanym projekcie
-* Pull Request powinien zawierać wszystkie 3 zadania (jeśli każde zadanie jest w innym PR lub zadanie 1 jest zrobione via PR a dwa pozostałe, które nie zawierają zmian w kodzie zgłoszone jako ISSUE wszystkie linki muszą trafić do zadania w Teams )
-* Wynik dla zadania 1 - zmiana w kodzie + opis
-* Wynik dla zadania 2 - opis + analiza
-* Wynik dla zadania 3 - opis + analiza
-* Linki do oceny należy umieścić w zadaniu w Teams
-
-# Punktowanie (ćwiczenie oceniane w skali 0-5 pkt):
-- 2 za analizę i poprawnienie podatności związanej z wyciekiem wrażliwych danych
-- 1 zadanie 2 - wykrycie i analizę wycieku sekretów
-- 2 punkty za analizę podatności OpenSource
 
 ## Credits
 * Java application - [GitHub Repo](https://github.com/pedrohenriquelacombe/spring-thymeleaf-crud-example)
